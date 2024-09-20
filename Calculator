@@ -1,0 +1,26 @@
+print("What year is it?")
+current_year = int(input())
+print("What month is it?")
+current_month = int(input())
+print("What year were you born?")
+birth_year = int(input())
+print("What month were you born?")
+birth_month = int(input())
+
+age = current_year - birth_year
+
+
+if current_month < birth_month:
+    age -= 1
+    month_difference = (age * 12) + (12 - (birth_month - current_month))
+else:
+    month_difference = (age * 12) + (current_month - birth_month)
+
+decades = abs(age) // 10
+retirement = 66 - age
+months_to_retirement = retirement * 12
+
+print(f"You are {age} years and {current_month} months old")
+print(f"{age} years OR {month_difference} months have passed since you were born")
+print(f"And with that, {decades} decades have passed")
+print(f"You have {retirement} years OR {months_to_retirement} months left until retirement")
